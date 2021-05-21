@@ -50,18 +50,30 @@ body{
 .form form .name-details{
     display: flex;
 }
-form .name-details.field:first-child{
+form .name-details .field:first-child{
     margin-right: 10px;
 }
+form .name-details .field:last-child{
+    margin-left: 10px;
+}
+
 .form form .field{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .image input{
+    font-size:17px;
+}
+.form form .button input{
+    margin-top:13px;
+}
 /*outline 외곽선 스타일 설정  */
 .form form .field input{
     outline: none;
-
 }
 .form form .input input{
     height: 40px;
