@@ -70,6 +70,14 @@ form .name-details .field:last-child{
 }
 .form form .button input{
     margin-top:13px;
+    height: 45px;
+    border:none;
+    font-size: 17px;
+    font-weight: 400;
+    background-color:#333;
+    color:#fff;
+    border-radius:5px;
+    cursor: pointer;
 }
 /*outline 외곽선 스타일 설정  */
 .form form .field input{
