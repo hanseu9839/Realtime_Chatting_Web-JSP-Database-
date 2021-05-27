@@ -76,6 +76,19 @@ form .name-details .field:last-child{
 .form form .image input{
     font-size:17px;
 }
+.form form .field i{
+    position: absolute;
+    right:15px;
+    color:#ccc;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+<!--요소의 콘텐츠 부분 끝에 생성된 콘텐츠를 추가한다-->
+.form form .field i.active::before{
+    color: #333;
+    content :"\f070";
+}
 .form form .button input{
     margin-top:13px;
     height: 45px;
@@ -174,6 +187,13 @@ form .name-details .field:last-child{
     font-size: 16px;
     border-radius: 5px 0 0 5px;
     outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
 }
 .users .search button{
     width: 47px;
@@ -190,7 +210,7 @@ form .name-details .field:last-child{
 max-height: 350px;
 overflow-y: auto;
 }
-.users-list::-webkit-scrollbar{
+:is(.users-list, .chat-box)::-webkit-scrollbar{
     width:0px;
 }
 .users-list a{
@@ -241,12 +261,17 @@ overflow-y: auto;
 
 .chat-box{
     height:500px;
-    background-color: #f7f7f7;
+    overflow-y:auto;
+    background-color: #57f59e;
     padding: 10px 30px 10px 30px;
     box-shadow: inset 0 32px 32px -32px rgb(0 0 0/ 5%),
                 inset 0 -32px 32px -32px rgb(0 0 0/5%);
 }
+.chat-box .chat{
+    margin: 15px 0;
+}
 .chat-box .chat p{
+    word-wrap:break-word;
     padding:8px 16px;
     box-shadow: inset 0 32px 32px -32px rgb(0 0 0/ 10%),
     inset 0 -32px 32px -32px rgb(0 0 0/10%);
@@ -266,18 +291,46 @@ overflow-y: auto;
 }
 .chat-box .incoming {
     display:flex;
-    align-items:center;
+    align-items:flex-end;
 }
 .chat-box .incoming img{
     height:35px;
     width:35px;
 }
-.incomig .details{
+.incoming .details{
     margin-left:10px;
+    margin-right: auto;
+    max-width: calc(100% -130px);
 }
-.chat-box .details p{
-    background: #333;
-    color:#fff;
+.incoming .details p{
+    background: rgb(255, 255, 255);
+    color:#333;
     border-radius: 18px 18px 18px 0;
 
+}
+.chat-area .typing-area{
+    padding:18px 30px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.typing-area input{
+    height: 45px;
+    width: calc(100% - 65px);
+    font-size:17px;
+    border: 1px solid #ccc;
+    padding : 0 13px;
+    border-radius: 5px 0 0 5px;
+    outline:none;
+}
+
+.typing-area button{
+    width:55px;
+    border:none;
+    outline:none;
+    background-color: #000;
+    color:#fff;
+    cursor:pointer;
+    font-size:19px;
+    border-radius: 0 5px 5px 0;
 }
