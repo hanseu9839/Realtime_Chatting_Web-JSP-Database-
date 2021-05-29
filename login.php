@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +27,7 @@
                 <div class="field button">
                     <input type="submit" value="Continue to Chat">
                 </div>
-                <div class="link">Not yet signed up? <a href="index.php">회원가입</a></div>
+                <div class="link">Not yet signed up? <a href="index.html">회원가입</a></div>
             </form>
         </section>
 
